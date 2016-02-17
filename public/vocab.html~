@@ -1,0 +1,15 @@
+<head>
+    <title>Словарь</title>
+    <script src="/javascripts/angular.js"></script>
+    <script src="/javascripts/controllers.js"></script></head>
+<body>
+	<form ng-app="myVocabulary" ng-controller="myVocabularyController">
+		<fieldset>
+			<legend>Главное окно</legend>
+			<p><span>Введите слово: </span><input id="wordOrigin" type="text" maxlength="20" ng-model="wordSearchModel"></p>
+			<ul class="list-unstyled">
+				<li ng-repeat="wordCard in wordCards | filter:wordSearchModel | orderBy:orderProp"><span id="lblWordOrigin">{{wordCard.wordOrigin}}</span> - <span id="lblWordTranslation">{{wordCard.wordTranslation}}</span></li>
+			</ul>
+		</fieldset>
+	</form>
+</body>

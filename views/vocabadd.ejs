@@ -1,0 +1,30 @@
+<html>
+<head>
+	<!-- build:js scripts/vendor.js -->
+		<!-- bower:js -->
+			<script src="javascripts/angular.js"></script>
+    		<!-- endbower -->
+	<!-- endbuild -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.min.js"></script>
+</head>
+<body>
+	<form ng-app="addWordApp" ng-controller="addWordApp">
+		<fieldset>
+			<legend>Главное окно</legend>
+			<p><span>Enter original: </span><input id="wordOrigin" type="text" maxlength="20" ng-model="wordOrigin"></p>
+			<p><span>Enter translation: </span><input id="wordOrigin" type="text" maxlength="20" ng-model="wordTranslation"></p>
+			<p><button ng-click="sendWord();">Send</button></p>
+			<p><a href="/">Watch vocaburary</a></p>
+		</fieldset>
+	</form>
+	<script>
+		﻿var myVocabulary = angular.module('addWordApp', []).controller('addWordApp', ["$scope", "$http",
+    function ($scope, $http) {
+        var uriGetWords = 'http://localhost:3000/todos';
+	$scope.sendWord = function(){
+        $http.post(uriGetWords, {wordOrigin:$scope.wordOrigin, wordTranslation:$scope.wordTranslation}).success(function (data) {
+        });};
+    }]);
+	</script>
+</body>
+</html>

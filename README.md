@@ -15,7 +15,7 @@ run mongodb using command "mongod"
 
 Clone this repository on your computer
 
-cd thisApplication
+change current directory to directory this application (vocabRestful)
 
 npm start
 

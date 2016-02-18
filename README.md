@@ -19,4 +19,6 @@ change current directory to directory this application (vocabRestful)
 
 npm start
 
+open page http://localhost:3000/
+
 trudundun

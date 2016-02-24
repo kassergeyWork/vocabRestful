@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 var mongoose = require('mongoose');
-var Todo = require('../models/Todo.js');
+var Todo = require('../models/Todo.sjs');
 mongoose.connect('mongodb://localhost/Vocab');
 var db = mongoose.connection;
 
 //vocab --add wordOrigin wordTranslation
 if(process.argv.length == 2)
 {
-    console.log("Use --add word translation, if you want add new entry.\n" + 
+    console.log("Use '--add word translation', if you want to add new entry.\n" + 
                 "write simply word after this command for translation.");
 }
 else if(process.argv[2] == '--add')

@@ -6,9 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var todos = require('./routes/todos');
+var vocab = require('./routes/vocab');
 var vocabadd = require('./routes/vocabadd');
-
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/todoApp', function(err) {
     if(err) {
@@ -34,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/vocabadd', vocabadd);
-app.use('/todos', todos);
+app.use('/vocab', vocab);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

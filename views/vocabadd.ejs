@@ -20,7 +20,7 @@
 	<script>
 		﻿var myVocabulary = angular.module('addWordApp', []).controller('addWordApp', ["$scope", "$http",
     function ($scope, $http) {
-        var uriGetWords = 'http://localhost:3000/todos';
+        var uriGetWords = 'http://localhost:3000/vocab';
 	$scope.sendWord = function(){
         $http.post(uriGetWords, {wordOrigin:$scope.wordOrigin, wordTranslation:$scope.wordTranslation}).success(function (data) {
         });};

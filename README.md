@@ -21,13 +21,4 @@ npm start
 
 open page http://localhost:3000/
 
-If you want to use this application like a command in terminal, then you should make next steps:
-
-1. Set up your current directory to directory of this application.
-
-2. Install globbaly this application using command "sudo npm install -g".
-
-After installation you can add the word using command "vocab --add hello привет"
-
-For translation you should type "vocab hello"
-
+trudundun

@@ -8,14 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var vocab = require('./routes/vocab');
 var vocabadd = require('./routes/vocabadd');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/todoApp', function(err) {
-    if(err) {
-        console.log('connection error', err);
-    } else {
-        console.log('connection successful');
-    }
-});
+//var db = require('./lib/myDBRepository');
 
 var app = express();
 

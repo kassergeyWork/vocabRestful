@@ -3,7 +3,8 @@ var router = express.Router();
 
 var db = require('../lib/DBVocab');
 
-//it's needed, i can describe later why i made that
+//функцию json необходимо запускать как экземпляр объекта res,
+//потому что в этой функции используется волшебная переменная this
 var runJsonLikeAMemberFunctionOfObjectRes = function(res)
 {
     return function(response){ res.json(response);};

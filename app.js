@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var vocab = require('./routes/vocab');
 var vocabadd = require('./routes/vocabadd');
-//var db = require('./lib/myDBRepository');
 
 var app = express();
 

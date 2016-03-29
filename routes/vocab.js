@@ -20,9 +20,9 @@ router.post('/', function(req, res, next) {
     db.addWord(req.body.wordOrigin, req.body.wordTranslation, runJsonLikeAMemberFunctionOfObjectRes(res));
 });
 
-/* GET /WordTranslations/id */
-router.get('/:id', function(req, res, next) {
-  	db.getWordById(req.params.id, cbFunc);
+/* GET /WordTranslations/word */
+router.get('/:word', function(req, res, next) {
+  	db.getWord(req.params.word, runJsonLikeAMemberFunctionOfObjectRes(res));
 });
 
 /* PUT /WordTranslations/:id */

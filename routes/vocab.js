@@ -19,10 +19,6 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
     db.addWord(req.body.wordOrigin, req.body.wordTranslation, runJsonLikeAMemberFunctionOfObjectRes(res));
 });
-/* POST /WordTranslations */
-router.post('/getWord', function(req, res, next) {
-    db.getWord(req.body.wordOrigin, runJsonLikeAMemberFunctionOfObjectRes(res));
-});
 
 /* GET /WordTranslations/word */
 router.get('/:word', function(req, res, next) {
@@ -37,6 +33,10 @@ router.put('/:id', function(req, res, next) {
 /* DELETE /WordTranslations/:id */
 router.delete('/:id', function(req, res, next) {
   	db.getWordByIdAndRemove(req.params.id, req.body, runJsonLikeAMemberFunctionOfObjectRes(res));
+});
+/* DELETE /WordTranslations/:id */
+router.delete('/', function(req, res, next) {
+  	db.getWordByOriginAndRemove(req.body, runJsonLikeAMemberFunctionOfObjectRes(res));
 });
 
 module.exports = router;

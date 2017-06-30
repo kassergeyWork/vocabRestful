@@ -30,12 +30,12 @@ router.put('/:id', function(req, res, next) {
   	db.getWordByIdAndUpdate(req.params.id, req.body, runJsonLikeAMemberFunctionOfObjectRes(res));
 });
 
-/* DELETE /WordTranslations/:id */
+/* DELETE /WordTranslations/:id 
 router.delete('/:id', function(req, res, next) {
   	db.getWordByIdAndRemove(req.params.id, req.body, runJsonLikeAMemberFunctionOfObjectRes(res));
-});
+});*/
 /* DELETE /WordTranslations/ */
-router.delete('/', function(req, res, next) {
+router.delete('/deleteWord', function(req, res, next) {
   	db.removeAll(runJsonLikeAMemberFunctionOfObjectRes(res));
 });
 /* DELETE /WordTranslations/:id */
